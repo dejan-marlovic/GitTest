@@ -50,3 +50,7 @@ Identity added: /c/Users/dmarl/.ssh/id_rsa (dmarlovic83@gmail.com)
  When we have created the SSH key on GitHub we can test it:
 
  ssh -T git@github.com
+
+ 5. To push we need to add new GitHub SSH Remote to our repository:
+
+ Example: git remote add ssh-origin git@github.com:w3schools-test/hello-world.git
