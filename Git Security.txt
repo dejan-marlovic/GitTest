@@ -32,4 +32,21 @@ you can generate an SSH key.
 
 Let's go through it, step by step.
 
-Start by creating a new key, using your email as a label:
+1 .Start by creating a new key, using your email as a label: ssh-keygen -t rsa -b 4096 -C "dmarlovic83@gmail.com"
+2. Add this SSH key pair to the SSH-Agent. In windows we need to just start SSH-Agent:
+-----------------------------------------------------------------
+PS C:\WINDOWS\system32> start-ssh-agent
+Removing old ssh-agent sockets
+Starting ssh-agent:  done
+Enter passphrase for /c/Users/dmarl/.ssh/id_rsa:
+Identity added: /c/Users/dmarl/.ssh/id_rsa (dmarlovic83@gmail.com)
+-------------------------------------------------------------------
+3. copy the public key from generated public-key file: C:\Users\dmarl\.ssh\id_rsa.pub
+
+4. Go to GitHub:
+ select "SSH and GPG keys". and click the "New SSH key" button
+ Select a title, and paste the public SSH key into the "Key" field, and click "Add SSH Key".
+
+ When we have created the SSH key on GitHub we can test it:
+
+ ssh -T git@github.com
